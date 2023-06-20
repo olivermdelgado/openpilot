@@ -46,7 +46,7 @@ class CarInterface(CarInterfaceBase):
       # It is documented in a four-part blog series:
       #   https://blog.willemmelching.nl/carhacking/2022/01/02/vw-part1/
       # Panda ALLOW_DEBUG firmware required.
-      ret.dashcamOnly = True
+      ret.dashcamOnly = False
 
     else:
       # Set global MQB parameters
@@ -126,7 +126,7 @@ class CarInterface(CarInterfaceBase):
       ret.mass = 1503 + STD_CARGO_KG
       ret.wheelbase = 2.80
       ret.minEnableSpeed = 20 * CV.KPH_TO_MS  # ACC "basic", no FtS
-      ret.minSteerSpeed = 50 * CV.KPH_TO_MS
+      ret.minSteerSpeed = 5 * CV.KPH_TO_MS
       ret.steerActuatorDelay = 0.2
       CarInterfaceBase.configure_torque_tune(candidate, ret.lateralTuning)
 
